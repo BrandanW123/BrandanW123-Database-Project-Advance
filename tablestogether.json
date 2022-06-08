@@ -1,0 +1,126 @@
+db.createCollection("employee", 
+{    validator: 
+	{       $jsonSchema: 
+		{          bsonType: "object",          
+			required: [ "emplyid", "emplysex", "emplyname"],
+			properties: { 
+							emplyid: {             
+										bsonType: "int",
+										minimum: 0,                
+										maximum: 1000,
+										description: "must be an integer in [ 0, 1000 ] and is required"
+							},             
+							emplysex: {
+									bsonType: "string",                
+									description: "must be a string & required"             
+							},
+							emplyname: {
+									bsonType: "string",
+									description: "must be a string & required"
+							}
+						
+						}
+							
+		}    
+		
+	}
+})
+
+
+db.createCollection("items", 
+{    validator: 
+	{       $jsonSchema: 
+		{          bsonType: "object",          
+			required: [ "itemname", "itemnum", "itemprice", "locaID", "emplyID"],
+			properties: { 
+							itemname: {
+									bsonType: "string",                
+									description: "must be a string & required"             
+							},
+							itemnum: {             
+										bsonType: "int",
+										minimum: 0,                
+										maximum: 1000,
+										description: "must be an integer in [ 0, 1000 ] and is required"
+							},    
+							itemprice: {             
+										bsonType: "int",
+										minimum: 0,                
+										maximum: 1000,
+										description: "must be an integer in [ 0, 1000 ] and is required"
+							},
+							locaID: {             
+										bsonType: "int",
+										minimum: 0,                
+										maximum: 1000,
+										description: "must be an integer in [ 0, 1000 ] and is required"
+							},
+							emplyID: {             
+										bsonType: "int",
+										minimum: 0,                
+										maximum: 1000,
+										description: "must be an integer in [ 0, 1000 ] and is required"
+							}
+						
+						}
+							
+		}     
+		
+	}
+})
+
+
+db.createCollection("location", 
+{    validator: 
+	{       $jsonSchema: 
+		{          bsonType: "object",          
+			required: [ "locationID", "locationStorage"],
+			properties: { 
+						locationID: {             
+									bsonType: "int",
+									minimum: 0,                
+									maximum: 1000,
+									description: "must be an integer in [ 0, 1000 ] and is required"
+						},             
+						locationStorage: {
+								bsonType: "string",                
+								description: "must be a string & required"             
+								}
+						
+						}
+							
+		}    
+		
+	}
+})
+
+
+
+db.createCollection("pay", 
+{    validator: 
+	{       $jsonSchema: 
+		{          bsonType: "object",          
+			required: [ "emplyid", "hrpay", "bank"],
+			properties: { 
+							emplyid: {             
+									bsonType: "string",
+									description: "must be a string and is required"
+							},             
+							hrpay: {
+									bsonType: "int",                
+									minimum: 0,                
+									maximum: 1000,                
+									description: "must be an integer in [ 0, 1000 ] and is required"             
+							},
+							bank: {
+									bsonType: "string",
+									description: "must be a string & required"
+								}
+						
+						}
+							
+		}    
+		
+	}
+})
+
